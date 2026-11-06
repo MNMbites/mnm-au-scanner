@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mnm-au-seekers
+    runtime: python
+    plan: starter
+    buildCommand: "echo Standard library only"
+    startCommand: python independent_feed.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: TWELVE_DATA_API_KEY
+        sync: false
